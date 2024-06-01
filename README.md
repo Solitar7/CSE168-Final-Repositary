@@ -7,14 +7,26 @@
 This is the final project for UCSD CSE168 SP24. I'm planning to do the homogeneous volumes and may finally finish it with different scenes or even Heterogeneous volumes in some way if possible. First of all, these are some of the pictures that inspire me to do the homogeneous volume.
 
 - From Stanford CS 348b competition
+
+![Insp_1](Insp_1)
+
+![Insp_2](Insp_2)
+
 - From Tyndall effect
+
+![Tyndall](Real_World_Tyndall_Effect_Insp_3)
 
 Then, I have read some of the materials about the homogeneous volume and currently I am trying to set up the scene for the final rendering
 - The sample image from previous homework
+
 ![sample](cornellBRDF.png)
+
 - The empty room that may be easier to test rendering
+
 ![empty](cornellEMPTY.png)
+
 - Trying to set up some objects from online resources
+  
 ![wtf](scrubPine.png)
 
 This document may also chnage in the future before submitting the final result.
