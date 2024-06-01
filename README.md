@@ -14,7 +14,7 @@ This is the final project for UCSD CSE168 SP24. I'm planning to do the homogeneo
 
 - From Tyndall effect
 
-![Tyndall](Real_World_Tyndall_Effect_Insp_3.png)
+![Tyndall](Real_World_Tyndall_Effect_Insp_3.jpg)
 
 Then, I have read some of the materials about the homogeneous volume and currently I am trying to set up the scene for the final rendering
 - The sample image from previous homework
