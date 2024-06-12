@@ -30,14 +30,38 @@ $$L(p(0), \omega) = \int_0^{t_{\text{hit}}} \exp(-\sigma_t t) \sigma_s L_{\text{
 
 $$L_{\text{scatter}}(p, \omega) = \int_{S^2} \rho(p(t), \omega, \omega') L(p(t), \omega') d \omega'$$
 
-These formulas should call each other recursively begin with $L(p(0), \omega)$ that takes the origin and direction calculated through the position of the pixel on the final image and other information set inside the scene. Termination should be executed when a certain number of depth is reached or by using the Russian roulette.
+These formulas should call each other recursively begin with $L(p(0), \omega)$ that takes the origin and direction calculated through the position of the pixel on the final image and other information set inside the scene. Termination should be executed when a certain number of depth is reached or by using the Russian roulette. When path hits object instead of scattered in the homogeneous volume, we should then consider back to the normal path tracing with BRDF and NEE, or even MIS.
 
 By using path tracing, instead of doing the whole real integration, we always use Monte Carlo to estimate the final result by sampling a random point in the scope of the integration and then divide the final result by the importance pdf to try to approach the result of the integration. As the number of sample increases, the average of the integration result may better approach the final result, and thus finer rendering results are expected as the number of sample per pixel (spp) increases.
 
 ## Rendering Result
 
-First of all, I may not promise that I have implemented my algorithms totally correct. But the following pictures are the rendering result in some simple scene.
+First of all, I may not promise that I have implemented my algorithms totally correct. But the following pictures are the rendering result in some simple scene (with BRDF importance sampling and Next Event Estimation considered, and also Russian roulette).
 
-Materials:
+This first one only consider one scatter (a test scene set by myself, with sigma_a = 0.006, sigma_s = 0.009, spp = 256)
+
+![sample](test_sphere.png)
+
+For this picture above, the next event estimator only tries to get light from the quad light above and all the spheres only has emission and no other settings. (When sphere hitted, return the emission of the sphere)
+
+The following pictures are all approached with the my whole implementation (emission of objects not considered, lights do have intensity):
+
+- the cornell box used in HW4 this quarter (sigma_a = 0.07, sigma_s = 0.03, spp = 1024)
+
+![HW4cornellBRDF](cornellBRDF.png)
+
+- the empty cornell box with the sphere in the previous one removed (sigma_a = 0.23, sigma_s = 0.02, spp = 2048)
+
+![empty](cornellEMPTY.png)
+
+- a foggy cornell box with two spheres inside (sigma_a = 0.35, sigma_s = 0.05, spp = 10000)
+
+![FinalTestVersion](cornellTEST.png)
+
+(p.s.: the last three scenes only have difference in the number of spheres and the parameter, the setting of light and all other shapes and materials are the same, and all of them are considered to be contained in a single homogeneous volume.)
+
+## Link for some References used
+
+Great thanks to the following materials:
 - [Source 1](https://graphics.pixar.com/library/ProductionVolumeRendering/paper.pdf)
 - [Source 2](https://en.wikipedia.org/wiki/Beer%E2%80%93Lambert_law)
