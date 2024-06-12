@@ -30,7 +30,9 @@ $$L(p(0), \omega) = \int_0^{t_{\text{hit}}} \exp(-\sigma_t t) \sigma_s L_{\text{
 
 $$L_{\text{scatter}}(p, \omega) = \int_{S^2} \rho(p(t), \omega, \omega') L(p(t), \omega') d \omega'$$
 
-These formulas should call each other recursively begin with $L(p(0), \omega)$ that takes the origin and direction calculated through the position of the pixel on the final image and other information set inside the scene. Termination should be executed when a certain number of depth is reached or by using the Russian roulette. When path hits object instead of scattered in the homogeneous volume, we should then consider back to the normal path tracing with BRDF and NEE, or even MIS.
+$$\sigma_t = \sigma_a + \sigma_s$$
+
+These formulas should call each other recursively begin with $L(p(0), \omega)$ that takes the origin and direction calculated through the position of the pixel on the final image and other information set inside the scene. $p$ considers the position that the path starts or hits or scatters at, which should be the position to start the next path tracing. Termination should be executed when a certain number of depth is reached or by using the Russian roulette. When path hits object instead of scattered in the homogeneous volume, we should then consider back to the normal path tracing with BRDF and NEE, or even MIS.
 
 By using path tracing, instead of doing the whole real integration, we always use Monte Carlo to estimate the final result by sampling a random point in the scope of the integration and then divide the final result by the importance pdf to try to approach the result of the integration. As the number of sample increases, the average of the integration result may better approach the final result, and thus finer rendering results are expected as the number of sample per pixel (spp) increases.
 
@@ -54,15 +56,17 @@ The following pictures are all approached with the my whole implementation (emis
 
 ![empty](cornellEMPTY.png)
 
-- a foggy cornell box with two spheres inside (sigma_a = 0.275, sigma_s = 0.025, spp = 10000)
+- a cornell box with two spheres inside, slightly foggy (sigma_a = 0.175, sigma_s = 0.025, spp = 10000)
 
 ![FinalTestVersion](cornellTEST.png)
 
 (p.s.: the last three scenes only have difference in the number of spheres and the parameter, the setting of light and all other shapes and materials are the same, and all of them are considered to be contained in a single homogeneous volume.)
 
-## Future
+## Thanks and Potential Development
 
-Though I may not update here, I may have a try to set up different volumes in a scene and volumes inside volumes. If possible, I'd like to also have a try to implement the heterogeneous volumetric rendering.
+Great thanks to Professor Ravi Ramamoorthi for teaching me this course this quarter, and also great thanks to Teaching Assistant Wesley Chang for all his help and suggestions and materials highlighted for me that support me in implementing this final project.
+
+Though I may not update here, I may have a try to set up different volumes in a scene and volumes inside volumes in the future. If possible, I'd like to also have a try to implement the heterogeneous volumetric rendering.
 
 ## Link for some References used
 
