@@ -64,7 +64,7 @@ The following pictures are all approached with the my whole implementation (emis
 
 ## Thanks and Potential Development
 
-Great thanks to Professor Ravi Ramamoorthi for teaching me this course this quarter, and also great thanks to Teaching Assistant Wesley Chang for all his help and suggestions and materials highlighted for me that support me in implementing this final project.
+Great thanks to **Professor Ravi Ramamoorthi** for teaching me this course this quarter, and also great thanks to **Teaching Assistant Wesley Chang** for all his help and suggestions and materials highlighted for me that support me in implementing this final project. Great thanks to them for answering my confusions throughout this quarter and in this project, and also my curiosity.
 
 Though I may not update here, I may have a try to set up different volumes in a scene and volumes inside volumes in the future. If possible, I'd like to also have a try to implement the heterogeneous volumetric rendering.
 
@@ -75,3 +75,4 @@ Great thanks to the following materials I used as references:
 - [Source 2](https://en.wikipedia.org/wiki/Beer%E2%80%93Lambert_law)
 - [Slide from Class](https://cseweb.ucsd.edu/~viscomp/classes/cse168/sp24/lectures/168-lecture15.pdf)
 - [Source from CSE272 Winter 2024](https://cseweb.ucsd.edu/~tzli/cse272/wi2024/)
+- [More Reference from Stanford CS 348b competition](https://graphics.stanford.edu/courses/cs348b-competition/)
