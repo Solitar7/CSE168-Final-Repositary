@@ -54,14 +54,20 @@ The following pictures are all approached with the my whole implementation (emis
 
 ![empty](cornellEMPTY.png)
 
-- a foggy cornell box with two spheres inside (sigma_a = 0.35, sigma_s = 0.05, spp = 10000)
+- a foggy cornell box with two spheres inside (sigma_a = 0.275, sigma_s = 0.025, spp = 10000)
 
 ![FinalTestVersion](cornellTEST.png)
 
 (p.s.: the last three scenes only have difference in the number of spheres and the parameter, the setting of light and all other shapes and materials are the same, and all of them are considered to be contained in a single homogeneous volume.)
 
+## Future
+
+Though I may not update here, I may have a try to set up different volumes in a scene and volumes inside volumes. If possible, I'd like to also have a try to implement the heterogeneous volumetric rendering.
+
 ## Link for some References used
 
-Great thanks to the following materials:
+Great thanks to the following materials I used as references:
 - [Source 1](https://graphics.pixar.com/library/ProductionVolumeRendering/paper.pdf)
 - [Source 2](https://en.wikipedia.org/wiki/Beer%E2%80%93Lambert_law)
+- [Slide from Class](https://cseweb.ucsd.edu/~viscomp/classes/cse168/sp24/lectures/168-lecture15.pdf)
+- [Source from CSE272 Winter 2024](https://cseweb.ucsd.edu/~tzli/cse272/wi2024/)
